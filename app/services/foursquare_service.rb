@@ -24,6 +24,7 @@ class FoursquareService
     end
     
     #get specific record data as specified in the docs.
+    #return the friends, that's what the method says it does...
     JSON.parse(resp.body)["response"]["friends"]["items"]
   end
   
