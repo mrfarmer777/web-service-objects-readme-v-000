@@ -23,6 +23,7 @@ class FoursquareService
       req.params['v']='20160201'
     end
     
+    #get specific record data as specified in the docs.
     JSON.parse(resp.body)["response"]["friends"]["items"]
   end
   
