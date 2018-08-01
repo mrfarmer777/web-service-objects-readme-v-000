@@ -33,7 +33,7 @@ class FoursquareService
       req.params['oauth_token'] = token
       req.params['v'] = '20160201'
     end
-    @results = JSON.parse(resp.body)["response"]["list"]["listItems"]["items"]
+    JSON.parse(resp.body)["response"]["list"]["listItems"]["items"]
   end
   
   
