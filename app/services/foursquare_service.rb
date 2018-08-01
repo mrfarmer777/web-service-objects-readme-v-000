@@ -13,8 +13,13 @@ class FoursquareService
   end
   
   def friends(token)
+    
+    #make a new get request to the endpoint specified in the docs
     resp=Faraday.get("https://api.foursquare.com/v2/users/self/friends") do |req|
+      #get the token handed as an argument
       req.params['oauth_token']=token
+      
+      #stupid v param
       req.params['v']='20160201'
     end
     
