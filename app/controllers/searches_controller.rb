@@ -6,8 +6,6 @@ class SearchesController < ApplicationController
   def friends
     foursquare=FoursquareService.new
     @friends=foursquare.friends(session[:token])
-    end
-    @friends = JSON.parse(resp.body)["response"]["friends"]["items"]
   end
 
   def foursquare
