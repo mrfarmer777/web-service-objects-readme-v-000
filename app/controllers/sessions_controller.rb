@@ -10,6 +10,9 @@ class SessionsController < ApplicationController
     
     #send em on their way
     redirect_to root_path
+    
+    
+    #all our Foursquare service object does is get the authentication token, so that's all we ask it to do.
   end
     
 
