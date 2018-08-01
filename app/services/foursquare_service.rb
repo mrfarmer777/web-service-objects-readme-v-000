@@ -29,10 +29,15 @@ class FoursquareService
   end
   
   def tips(token)
+    
+    #make the API call specified in docs
     resp = Faraday.get("https://api.foursquare.com/v2/lists/self/tips") do |req|
+      #proper authentication and versioning
       req.params['oauth_token'] = token
       req.params['v'] = '20160201'
     end
+    
+    #return the data to the controller. That's all I do! (That, and win....)
     JSON.parse(resp.body)["response"]["list"]["listItems"]["items"]
   end
   
